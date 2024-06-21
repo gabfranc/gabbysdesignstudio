@@ -1,44 +1,89 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import './Navbar.css';
+import React, { useState, useEffect } from 'react';
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Link as ScrollLink } from 'react-scroll';
+import LogoImg from '../Images/logo.png';
+import Instagram from '../socials/instagram.svg';
+import TikTok from '../socials/tiktok.svg';
+import YouTube from '../socials/youtube.svg';
+import LinkedIn from '../socials/linkedin.svg';
+import '../App.css';
 
-const NavBar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+export const NavBar = () => {
+  const [activeLink, setActiveLink] = useState('home');
+  const [scrolled, setScrolled] = useState(false);
 
-    const toggleNav = () => {
-        setIsOpen(!isOpen);
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
 
-    return (
-        <nav className="navbar">
-            <div className="navbar-container">
-                <div className="navbar-logo">
-                    <NavLink to="/">Logo</NavLink>
-                </div>
-                <div className="navbar-links">
-                    <ul className={isOpen ? "active" : ""}>
-                        <li>
-                            <NavLink to="/" activeClassName="active" onClick={toggleNav}>Home</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/blog" activeClassName="active" onClick={toggleNav}>Blog</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/projects" activeClassName="active" onClick={toggleNav}>Projects</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/contact" activeClassName="active" onClick={toggleNav}>Contact</NavLink>
-                        </li>
-                    </ul>
-                </div>
-                <div className="navbar-toggle" onClick={toggleNav}>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                </div>
-            </div>
-        </nav>
-    );
-};
+    window.addEventListener('scroll', onScroll);
 
-export default NavBar;
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  const handleSetActiveLink = (link) => {
+    setActiveLink(link);
+  };
+
+  return (
+    <Navbar className={`navbar ${scrolled ? 'scrolled' : ''}`} expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">
+          <img src={LogoImg} alt="Logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav">
+          <span className="navbar-toggler-icon"></span>
+        </Navbar.Toggle>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <ScrollLink
+              to="home"
+              smooth={true}
+              duration={500}
+              className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
+              onSetActive={() => handleSetActiveLink('home')}
+            >
+              HOME
+            </ScrollLink>
+            <ScrollLink
+              to="skills"
+              smooth={true}
+              duration={500}
+              className={`nav-link ${activeLink === 'skills' ? 'active' : ''}`}
+              onSetActive={() => handleSetActiveLink('skills')}
+            >
+              SKILLS
+            </ScrollLink>
+            <ScrollLink
+              to="projects"
+              smooth={true}
+              duration={500}
+              className={`nav-link ${activeLink === 'projects' ? 'active' : ''}`}
+              onSetActive={() => handleSetActiveLink('projects')}
+            >
+              PROJECTS
+            </ScrollLink>
+          </Nav>
+          <span className="navbar-text">
+            <div className="social-icon">
+              <a href="#"><img src={Instagram} alt=""/></a>
+              <a href="#"><img src={TikTok} alt=""/></a>
+              <a href="#"><img src={YouTube} alt=""/></a>
+              <a href="#"><img src={LinkedIn} alt=""/></a>
+            </div>
+            <button className="vvd" onClick={() => console.log('connect')}>
+              <span>Let's Connect 😘</span>
+            </button>
+          </span>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
