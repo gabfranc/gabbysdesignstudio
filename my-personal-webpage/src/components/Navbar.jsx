@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
+import { ArrowRightCircle } from "react-bootstrap-icons";
 import { Link as ScrollLink } from 'react-scroll';
 import LogoImg from '../Images/logo.png';
 import Instagram from '../socials/instagram.svg';
@@ -84,8 +85,8 @@ export const NavBar = () => {
               <a href="https://www.youtube.com/@kuppysanimation3332"><img src={YouTube} alt="YouTube"/></a>
               <a href="https://www.linkedin.com/in/gabrielle-franco/"><img src={LinkedIn} alt="LinkedIn"/></a>
             </div>
-            <a href="mailto:your-email@example.com" className="vvd">
-              <span>Let's Connect 😘</span>
+            <a href="mailto:gabrielleafranco@gmail.com" className="vvd">
+              Let's Connect <ArrowRightCircle size={25}/>
             </a>
           </span>
         </Navbar.Collapse>
