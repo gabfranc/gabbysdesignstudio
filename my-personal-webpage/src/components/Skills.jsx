@@ -42,7 +42,7 @@ export const Skills = () => {
               <p>Here are the services that I will be offering.</p>
               <Carousel responsive={responsive} infinite={false} className="skills-slider">
                 {items.map((item, index) => (
-                  <div key={index} className={`item ${index < 3 ? 'circle' : 'rectangle'}`}>
+                  <div key={index} className={`item ${index < 3 ? 'circle' : 'rectangle'}`} id="names"> 
                     <img src={item.imgSrc} alt="Image" />
                     <h5>{item.title}</h5>
                   </div>

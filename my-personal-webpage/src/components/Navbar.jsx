@@ -47,6 +47,8 @@ export const NavBar = () => {
               to="home"
               smooth={true}
               duration={500}
+              spy={true}
+              offset={-70}
               className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
               onSetActive={() => handleSetActiveLink('home')}
             >
@@ -56,6 +58,8 @@ export const NavBar = () => {
               to="skills"
               smooth={true}
               duration={500}
+              spy={true}
+              offset={-70}
               className={`nav-link ${activeLink === 'skills' ? 'active' : ''}`}
               onSetActive={() => handleSetActiveLink('skills')}
             >
@@ -65,6 +69,8 @@ export const NavBar = () => {
               to="projects"
               smooth={true}
               duration={500}
+              spy={true}
+              offset={-70}
               className={`nav-link ${activeLink === 'projects' ? 'active' : ''}`}
               onSetActive={() => handleSetActiveLink('projects')}
             >
@@ -73,14 +79,14 @@ export const NavBar = () => {
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="#"><img src={Instagram} alt=""/></a>
-              <a href="#"><img src={TikTok} alt=""/></a>
-              <a href="#"><img src={YouTube} alt=""/></a>
-              <a href="#"><img src={LinkedIn} alt=""/></a>
+              <a href="https://www.instagram.com/gabby.designstudio/"><img src={Instagram} alt="Instagram"/></a>
+              <a href="https://www.tiktok.com/@gabby.designstudio?lang=en"><img src={TikTok} alt="TikTok"/></a>
+              <a href="https://www.youtube.com/@kuppysanimation3332"><img src={YouTube} alt="YouTube"/></a>
+              <a href="https://www.linkedin.com/in/gabrielle-franco/"><img src={LinkedIn} alt="LinkedIn"/></a>
             </div>
-            <button className="vvd" onClick={() => console.log('connect')}>
+            <a href="mailto:your-email@example.com" className="vvd">
               <span>Let's Connect 😘</span>
-            </button>
+            </a>
           </span>
         </Navbar.Collapse>
       </Container>

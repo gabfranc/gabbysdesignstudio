@@ -16,10 +16,15 @@ src/ components/ Contact.js NavBar.js Banner.js Skills.js Projects.js App.js App
   width: 195px;
 }
 
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 /* Nav Bar Component */
 nav {
   font-weight: 700;
-  color: #74569b;
+  color: #895cc4;
 }
 
 nav a:hover {
@@ -46,16 +51,35 @@ nav img {
   gap: 25px;
 }
 
+.navbar-text button {
+  color: indigo;
+  background: linear-gradient(antiquewhite, rgb(167, 94, 220, 0.7));
+  font-weight: 700;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
 .social-icon img {
   height: 3.6vh;
   margin-right: 12px;
 }
 
+.social-icon img:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+;
+
 /* Banner Component */
 
 .banner {
-  margin-top: 0;
+  margin-top: 30vh;
   padding: 120px 10px 140px 10px;
+}
+
+#banner {
+  margin-top: 12vh;
 }
 
 .banner .tagline {
@@ -144,7 +168,7 @@ nav img {
   background-image: url('./Images/BG-Hearts.png');
   background-repeat: repeat-y;
   z-index: 1;
-  opacity: 0.8;
+  opacity: 0.9;
   animation: updown 3s linear infinite;
 }
 
@@ -177,7 +201,7 @@ nav img {
 /* Skills Section */
 
 .skill {
-  margin-top: 16vh;
+  margin-top: 46vh;
   padding: 0 0 50px 0;
   position: relative;
 }
@@ -228,6 +252,10 @@ nav img {
   box-shadow: -2px 4px #372554;
 }
 
+#names {
+  color: #0c385f;
+}
+
 /* Projects Section */
 
 .project {
@@ -270,8 +298,10 @@ nav img {
   width: 100%;
   padding: 10px;
   background: rgba(0, 0, 0, 0.6);
-  color: #3ba4ff;
+  color: #c9e0f5;
+  text-shadow: 2px 2px 0 #182939;
   text-align: center;
+  font-weight: 500;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -297,7 +327,7 @@ nav img {
 }
 
 .custom-nav .nav-link {
-  color: #02335d;
+  color: #25659c;
   font-weight: 500;
   background: transparent;
   border: none;
@@ -318,118 +348,26 @@ nav img {
   border-radius: 5px;
 }
 
-/* Contact Section */
-
-.contact {
-  padding: 60px 0;
+/* Footer Section */
+.footer {
+  padding: 20px 0;
+  background: linear-gradient(rgb(29, 64, 145), rgb(4, 53, 76), 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.contact h2 {
-  font-weight: 700;
-  font-size: 30px;
-  margin-bottom: 15px;
+.footer .logo {
+  height: 28.5vh;
+  margin-top: -60px;
+  margin-left: -55vh;
+  margin-bottom: -50px;
 }
 
-.contact p {
-  font-size: 16px;
-  color: #6c757d;
-  text-align: left;
-}
-
-.contact form {
-  margin-top: 20px;
-}
-
-.contact input[type="text"],
-.contact input[type="email"],
-.contact input[type="tel"],
-.contact textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 16px;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.contact input[type="text"]:focus,
-.contact input[type="email"]:focus,
-.contact input[type="tel"]:focus,
-.contact textarea:focus {
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.contact textarea {
-  resize: vertical;
-}
-
-.contact button[type="submit"] {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.15s ease-in-out;
-}
-
-.contact button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-.contact .social-icon {
+.footer .social-icon {
   display: flex;
   gap: 10px;
-  margin-top: 20px;
-}
-
-.contact .social-icon a {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #007bff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.15s ease-in-out;
-}
-
-.contact .social-icon a:hover {
-  background-color: #0056b3;
-}
-
-.contact .social-icon img {
-  width: 20px;
-  height: 20px;
-}
-
-.alert {
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.alert-success {
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-}
-
-.alert-danger {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
 }
 
 /* Mobile Responsive Styles */
@@ -523,5 +461,17 @@ nav img {
 
   .skill-bx h2 {
     font-size: 24px;
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 40px;
+  }
+
+  .footer .logo {
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: auto;
   }
 }
