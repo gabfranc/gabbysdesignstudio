@@ -1,4 +1,4 @@
-src/ components/ Contact.js NavBar.js Banner.js Skills.js Projects.js App.js App.css body {
+body {
   background: linear-gradient(#94bad2, #d5d5ff);
   object-fit: fill;
   min-height: 150vh;
