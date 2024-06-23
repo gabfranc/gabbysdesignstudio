@@ -9,7 +9,7 @@ body {
   text-align: center;
 }
 
-.vvd {
+.banner .vvd {
   text-decoration: none;
   border-radius: 10vh;
   border: none !important;
@@ -97,6 +97,12 @@ nav img {
 
 #banner {
   margin-top: 12vh;
+}
+
+.banner .social-icon a {
+  gap: 10px;
+  display: flex;
+  margin-left: 12px;
 }
 
 .banner .tagline {

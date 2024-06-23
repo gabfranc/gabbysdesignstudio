@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import { ArrowRightCircle } from "react-bootstrap-icons";
 import { Link as ScrollLink } from 'react-scroll';
 import LogoImg from '../Images/logo.png';
 import Instagram from '../socials/instagram.svg';
@@ -80,14 +79,11 @@ export const NavBar = () => {
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="https://www.instagram.com/gabby.designstudio/"><img src={Instagram} alt="Instagram"/></a>
-              <a href="https://www.tiktok.com/@gabby.designstudio?lang=en"><img src={TikTok} alt="TikTok"/></a>
-              <a href="https://www.youtube.com/@kuppysanimation3332"><img src={YouTube} alt="YouTube"/></a>
-              <a href="https://www.linkedin.com/in/gabrielle-franco/"><img src={LinkedIn} alt="LinkedIn"/></a>
+              <a href="https://www.instagram.com/gabby.designstudio/"><img src={Instagram} alt="Instagram" /></a>
+              <a href="https://www.tiktok.com/@gabby.designstudio?lang=en"><img src={TikTok} alt="TikTok" /></a>
+              <a href="https://www.youtube.com/@kuppysanimation3332"><img src={YouTube} alt="YouTube" /></a>
+              <a href="https://www.linkedin.com/in/gabrielle-franco/"><img src={LinkedIn} alt="LinkedIn" /></a>
             </div>
-            <a href="mailto:gabrielleafranco@gmail.com" className="vvd">
-              Let's Connect <ArrowRightCircle size={25}/>
-            </a>
           </span>
         </Navbar.Collapse>
       </Container>
